@@ -1,0 +1,13 @@
+participante_id,nombre,rol,equipo_id,tarjeta_acceso,mac_dispositivo,email
+1,Marcos Reyes,Estudiante,1,TAR-101,AA:BB:CC:11:22:01,marcos.reyes@instituto.edu
+2,Lucía Chen,Estudiante,1,TAR-102,AA:BB:CC:11:22:02,lucia.chen@instituto.edu
+3,Pablo Ortega,Estudiante,2,TAR-103,AA:BB:CC:11:22:03,pablo.ortega@instituto.edu
+4,Sara Jiménez,Estudiante,2,TAR-104,AA:BB:CC:11:22:04,sara.jimenez@instituto.edu
+5,Diego Morales,Estudiante,3,TAR-105,AA:BB:CC:11:22:05,diego.morales@instituto.edu
+6,Elena Rivas,Estudiante,3,TAR-106,AA:BB:CC:11:22:06,elena.rivas@instituto.edu
+7,Adrián Campos,Estudiante,4,TAR-107,AA:BB:CC:11:22:07,adrian.campos@instituto.edu
+8,Nuria Blanco,Estudiante,4,TAR-108,AA:BB:CC:11:22:08,nuria.blanco@instituto.edu
+9,Carmen Vidal,Profesora,0,TAR-201,AA:BB:CC:11:22:09,carmen.vidal@instituto.edu
+10,Roberto Funes,Vigilante,0,TAR-301,AA:BB:CC:11:22:10,roberto.funes@instituto.edu
+11,Tomás Herrera,Organizador,0,TAR-202,AA:BB:CC:11:22:11,tomas.herrera@instituto.edu
+12,Inés Navarro,Técnica IT,0,TAR-203,AA:BB:CC:11:22:12,ines.navarro@instituto.edu

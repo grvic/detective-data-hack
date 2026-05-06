@@ -1,0 +1,15 @@
+evento_id,tipo_evento,fecha_hora,descripcion,ubicacion,registrado_por
+1,inicio_hackathon,2026-03-15 09:00:00,Apertura oficial del HackTech 2026,Salón de Actos,Tomás Herrera
+2,entrega_material,2026-03-15 09:15:00,Distribución de credenciales y material a equipos,Salón de Actos,Tomás Herrera
+3,checkpoint_1,2026-03-15 12:00:00,Primera revisión de progreso de los equipos,Aula 3 y 4,Carmen Vidal
+4,almuerzo,2026-03-15 13:00:00,Pausa para comer - todos salen de las aulas,Cafetería,Tomás Herrera
+5,checkpoint_2,2026-03-15 16:00:00,Segunda revisión - todos los equipos presentan avance,Aula 3 y 4,Carmen Vidal
+6,cierre_jornada,2026-03-15 18:00:00,Fin de la jornada oficial - se pide a todos que salgan,Entrada Principal,Roberto Funes
+7,revision_organizador,2026-03-15 19:00:00,Tomás revisa el estado de las aulas antes de cerrar,Aula 3,Tomás Herrera
+8,ronda_vigilante,2026-03-15 22:15:00,Ronda nocturna - vigilante detecta todo normal,Aula 3,Roberto Funes
+9,acceso_nocturno_1,2026-03-15 22:55:00,Acceso detectado fuera de horario,Aula 3,Sistema automático
+10,acceso_nocturno_2,2026-03-15 23:33:00,Acceso detectado fuera de horario,Aula 3,Sistema automático
+11,alerta_red,2026-03-15 23:50:00,Transferencia de datos inusual detectada en AP-AULA3,Aula 3,Sistema automático
+12,descubrimiento,2026-03-16 07:30:00,Tomás descubre que el repo de EcoTrack está vacío,Aula 3,Tomás Herrera
+13,hallazgo_usb,2026-03-16 07:45:00,USB encontrado en papelera del Pasillo Planta 1,Pasillo Planta 1,Roberto Funes
+14,denuncia,2026-03-16 08:00:00,Equipo ByteForce denuncia el robo de su código,Dirección,Marcos Reyes
