@@ -18,12 +18,13 @@
 |--------|--------|-------------|
 | 0-3 | **Enganche** | Presenta el caso de forma dramática: "¡Alguien ha robado el código!" |
 | 3-15 | **Teoría express** | Roles de datos, estructurado vs no estructurado, qué es un agente, RAG, prompts buenos/malos |
-| 15-20 | **Demo live** | Muestra el Detective resolviendo el Paso 1 y 2 en vivo |
-| 20-50 | **Actividad: Investiga** | Parejas resuelven pasos 3-6 formulando preguntas al Detective |
-| 50-60 | **Puesta en común** | Cada pareja presenta su pista más importante |
-| 60-70 | **Prompt Battle** | Competición: ¿quién formula la mejor pregunta? |
-| 70-80 | **Red Team** | ¿Pueden "romper" al agente? Buscar alucinaciones |
-| 80-90 | **Cierre** | Solución, informe final, reflexión y feedback |
+| 15-25 | **Montamos el equipo** | Demo en vivo: crear los agentes en Copilot Studio ante los alumnos |
+| 25-30 | **Demo live** | Muestra el Detective resolviendo el Paso 1 y 2 en vivo |
+| 30-55 | **Actividad: Investiga** | Parejas resuelven pasos 3-6 formulando preguntas al Detective |
+| 55-65 | **Puesta en común** | Cada pareja presenta su pista más importante |
+| 65-75 | **Prompt Battle** | Competición: ¿quién formula la mejor pregunta? |
+| 75-85 | **Red Team** | ¿Pueden "romper" al agente? Buscar alucinaciones |
+| 85-90 | **Cierre** | Solución, informe final, reflexión y feedback |
 
 ---
 
@@ -66,7 +67,87 @@ Usa analogías cotidianas:
 
 ---
 
-## 🎮 Actividad Principal: Investiga (30 min)
+## 🛠️ Montamos el Equipo — Crear agentes en vivo (10 min)
+
+> **Objetivo:** Que los alumnos vean lo fácil que es crear un "equipo de detectives IA" en minutos.  
+> **Di esto:** *"Ya sabemos qué ha pasado. Ahora necesitamos un equipo de investigación. Vamos a CREARLO en directo."*
+
+### Paso 1: Accede a Copilot Studio
+
+Abre [copilotstudio.microsoft.com](https://copilotstudio.microsoft.com) en el proyector y selecciona tu entorno.
+
+> 💡 **Tip para el presentador:** Si quieres ahorrar tiempo, ten los agentes ya pre-creados y haz solo la demo del Detective + conectar agentes. Si quieres el "wow" completo, créalos todos en vivo.
+
+### Paso 2: Agente "Detective" (Orquestador principal)
+
+1. **+ Crear** → **Nuevo agente**
+2. **Nombre:** `Detective - Operación Hackathon`
+3. **Descripción:** Pega la descripción corta de `prompts/detective.md` (sección "Descripción del agente")
+4. **Instrucciones:** Copia/pega el bloque de instrucciones completo de `prompts/detective.md` (sección "Instrucciones del Detective")
+5. **Knowledge:** No añadir nada (este delega a los otros)
+6. **Guardar y publicar**
+
+> **Di esto:** *"Este es el jefe del equipo. Tiene un guion con los 7 pasos de la investigación y sabe cuándo llamar a cada especialista."*
+
+### Paso 3: Agente "Analista de Datos" (Fabric)
+
+1. **+ Crear** → **Nuevo agente**
+2. **Nombre:** `Analista de Datos`
+3. **Instrucciones:** Contenido de `prompts/analista_datos.md` (el bloque entre ```)
+4. **Knowledge** → **Agregar conocimiento** → **Microsoft Fabric**:
+   - Selecciona tu workspace de Fabric
+   - Elige el modelo semántico que creaste con los 5 CSV
+   - Activa "Consultas en lenguaje natural"
+5. **Guardar**
+
+> **Di esto:** *"Este es el experto en números. Tiene acceso a todas las tablas: quién entró, cuándo, qué WiFi usó, cuántos datos descargó. Le preguntas en español y él busca en los datos."*
+
+### Paso 4: Agente "Archivista" (RAG documental)
+
+1. **+ Crear** → **Nuevo agente**
+2. **Nombre:** `Archivista`
+3. **Instrucciones:** Contenido de `prompts/archivista.md`
+4. **Knowledge** → **Agregar conocimiento** → **Archivos**:
+   - Sube los 6 markdown de `/docs` (arrastra todos a la vez)
+   - Copilot Studio los indexará automáticamente para RAG
+5. **Guardar**
+
+> **Di esto:** *"Este ha leído TODOS los documentos del caso: testimonios, emails, normativa. Cuando le preguntas algo, busca en los documentos y te cita la fuente. No se inventa nada."*
+
+### Paso 5: Agente "Analizador de Imágenes"
+
+1. **+ Crear** → **Nuevo agente**
+2. **Nombre:** `Analizador de Imágenes`
+3. **Instrucciones:** Contenido de `prompts/analizador_imagenes.md`
+4. En **Configuración** (⚙️) → **Generative AI** → Asegúrate de que el modelo GPT-4o o equivalente con visión está habilitado
+5. **Guardar**
+
+> **Di esto:** *"Y este es el perito que analiza fotos: el USB que encontraron, capturas de pantalla, fotos del aula. Le mandas una imagen y te dice qué ve."*
+
+### Paso 6: Conectar todo al Detective (orquestación)
+
+1. Vuelve al agente **Detective**
+2. Ve a **Acciones** → **Agregar acción** → **Agente**
+3. Añade los 3 agentes como acciones disponibles:
+   - `Analista de Datos` → pega su descripción corta (de `prompts/detective.md`, sección "Descripciones de los agentes conectados")
+   - `Archivista` → pega su descripción corta
+   - `Analizador de Imágenes` → pega su descripción corta
+4. En las instrucciones del Detective ya está el guion de cuándo usar cada uno
+
+> **Di esto:** *"Ya está. Acabamos de montar un equipo de investigación con IA en... ¿cuántos minutos? Y ahora el Detective sabe cuándo llamar a cada uno. Vamos a probarlo."*
+
+### Paso 7: Probar (transición a la demo)
+
+1. Click **"Probar agente"** (panel derecho)
+2. Escribe: *"Hola Detective, ¿qué ha pasado?"*
+3. Debería presentar el caso y sugerirte por dónde empezar
+4. Sigue con los Pasos 1-2 de la investigación en vivo antes de pasar a las parejas
+
+> 💡 **Tip:** Este paso es la transición natural al bloque de "Demo live". Haces 1-2 preguntas al Detective en el proyector y luego dices: *"Ahora os toca a vosotros."*
+
+---
+
+## 🎮 Actividad Principal: Investiga (25 min)
 
 ### Setup
 - Parejas con un dispositivo (portátil o móvil) con acceso al Detective
