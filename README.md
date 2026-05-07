@@ -1,7 +1,7 @@
 # 🕵️ Detective Data Hack — Operación Hackathon
 
 > **Workshop educativo** para demostrar cómo montar y orquestar agentes con Microsoft Copilot Studio desde CLI.  
-> Nivel: 1º de FP de Informática | Duración: 60-90 minutos
+> Duración: 60-90 minutos
 
 ---
 
